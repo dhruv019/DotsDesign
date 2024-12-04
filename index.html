@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - Dots</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header sticky-top">
+    <div class="branding d-flex align-items-cente">
+
+      <div class="w-100 mx-5 position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo ms-5 ps-5 d-flex align-items-center">
+          <img src="assets/img/logo.png" alt="">
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a class="fs-5 text-uppercase" href="#projects">Projects</a></li>
+            <li><a class="fs-5 text-uppercase" href="#services">Our Services</a></li>
+            <li><a class="fs-5 text-uppercase" href="#about">About</a></li>
+            <li><a class="fs-5 text-uppercase" href="#contact">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+    <section id="hero" class="hero section light-background">
+      <div class="row gy-4 mx-auto">
+        <div class="col-lg-12 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+          <h1 class="text-white text-center">INNOVATIVE INTERIOR DESIGN</h1>
+          <p class="text-white text-center">DESIGNING YOUR VISION</p>
+          <div class="d-flex align-items-center justify-content-center gap-3 flex-column flex-md-row">
+            <a href="#about" class="btn-get-started">Schedule call</a>
+            <a href="#ourwork" class="btn-get-started secondary">Explore Work</a>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <section id="ourwork" class="ourwork section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <p>Explore Our Work</p>
+        <span class="d-block mx-auto w-50">Discover our curated portfolio of innovative designs, blending style and
+          functionality. Explore how we
+          transform spaces into personalized works of art.</span>
+      </div>
+      <div class="swiper init-swiper ps-lg-5 ms-lg-5 ps-3 ms-3">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            
+            "slidesPerView": "auto",
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            },
+            "breakpoints": {
+              "320": {
+                "slidesPerView": 2,
+                "spaceBetween": 16
+              },
+              "480": {
+                "slidesPerView": 3,
+                "spaceBetween": 16
+              },
+              "640": {
+                "slidesPerView": 4,
+                "spaceBetween": 16
+              },
+              "992": {
+                "slidesPerView": 6,
+                "spaceBetween": 16
+              }
+            }
+          }
+        </script>
+        <div class="swiper-wrapper align-items-center">
+          <div class="swiper-slide"><img src="assets/img/portfolio/our-work-1.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/our-wrok-2.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/our-wrok-3.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/our-work-1.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/our-wrok-2.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/our-wrok-3.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/our-work-1.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/our-wrok-2.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/our-wrok-3.png" class="img-fluid" alt=""></div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center justify-content-center py-5 pb-0">
+        <a href="#about" class="btn btn-primary bg-brown">Find your style</a>
+      </div>
+    </section>
+
+    <section id="about" class="about section">
+      <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
+        <p>ABOUT US</p>
+        <span class="d-block mx-auto w-50">Welcome to Dots, your top choice for architecture, interior design, and
+          landscape design in Vadodara, Gujarat. We create beautiful, functional spaces tailored to your needs. Our
+          designs focus on client satisfaction and high-quality aesthetics. We transform residential, commercial, and
+          landscape projects into stunning spaces that impress and inspire. With us, the entire process of designing and
+          execution is very smooth, thanks to our high-quality teams handling all types of execution. Explore our
+          portfolio to see how we bring your vision to life and turn dreams into reality</span>
+      </div>
+      <div class="container text-center">
+        <img src="assets/img/about-us.png" class="img-fluid" alt="">
+      </div>
+    </section>
+
+
+
+    <section id="services" class="services section bg-transparent p-0">
+      <div class="row g-0 w-100">
+        <div class="col-lg-6 ps-0 ps-lg-5 d-flex flex-column justify-content-center aos-init aos-animate"
+          data-aos="fade-up" data-aos-delay="200">
+          <div class="section-title ps-0 ps-lg-5" data-aos="fade-up">
+            <p class="text-start">Services</p>
+            <span class="d-block text-lg-start text-center">We provide interior design solutions,
+              transforming
+              spaces
+              into functional
+              and personalized environments. From concept to completion, we bring your vision to life.</span>
+          </div>
+          <div class="about-content ps-0 ps-lg-5">
+            <ul class="list-group list-unstyled">
+              <li id="planning">
+                <div>
+                  <h4 class="border-bottom ps-3 pb-2">Planning</h4>
+                  <p class="ps-3">Thoughtful space planning to optimize functionality and style while aligning with
+                    your
+                    needs and
+                    preferences.</p>
+                </div>
+              </li>
+              <li id="designing">
+                <div>
+                  <h4 class="border-bottom ps-3 pb-2">Designing</h4>
+                  <p class="ps-3">Creative and innovative design concepts that bring your dream spaces to life with
+                    precision and elegance.</p>
+                </div>
+              </li>
+              <li id="execution">
+                <div>
+                  <h4 class="border-bottom ps-3 pb-2">Execution</h4>
+                  <p class="ps-3">Seamless execution with attention to detail, ensuring timely delivery and impeccable
+                    craftsmanship.</p>
+                </div>
+              </li>
+              <li id="architectural">
+                <div>
+                  <h4 class="border-bottom ps-3 pb-2">Architectural</h4>
+                  <p class="ps-3">Expert architectural solutions integrating modern design principles with structural
+                    excellence for timeless spaces.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="col-lg-6 aos-init aos-animate ps-0 ps-lg-5" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/img/about.png" alt="" class="img-fluid">
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+      <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
+        <p>Explore real client before & after</p>
+        <span class="d-block mx-auto w-50">Discover stunning transformations with our real client projects. See how we
+          turn visions into beautifully designed realities.</span>
+      </div>
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter=".filter-living" data-layout="masonry"
+          data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters d-flex align-items-center justify-content-center gap-4"
+            data-aos="fade-up" data-aos-delay="100">
+            <li data-filter=".filter-living" class="filter-active">Living room</li>
+            <li data-filter=".filter-dining">Dining room</li>
+            <li data-filter=".filter-bedroom">Bedroom</li>
+            <li data-filter=".filter-explore">Explore more</li>
+          </ul>
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-md-12 portfolio-item isotope-item filter-living">
+              <div class="swiper init-swiper ps-lg-5 ms-lg-5 ps-3 ms-3">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 600,
+                    
+                    "slidesPerView": "auto",
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    },
+                    "breakpoints": {
+                      "320": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 16
+                      },
+                      "480": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 16
+                      },
+                      "640": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 16
+                      },
+                      "992": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 16
+                      }
+                    }
+                  }
+                </script>
+                <div class="swiper-wrapper align-items-center">
+                  <div class="swiper-slide">
+                    <div class="d-flex align-items-center">
+                      <div class="w-50 clients-before">
+                        <img src="assets/img/clients/client1-before.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                      <div class="w-50 clients-after">
+                        <img src="assets/img/clients/client2-after.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                    </div>
+                    <div class="card rounded-0">
+                      <div class="card-body">
+                        <h4 class="card-title">HARSH PATEL Residence</h4>
+                        <p class="card-text">We transformed the space into a perfect harmony of style and functionality.
+                          Every detail is thoughtfully designed to elevate your living experience.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="d-flex align-items-center">
+                      <div class="w-50 clients-before">
+                        <img src="assets/img/clients/client1-before.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                      <div class="w-50 clients-after">
+                        <img src="assets/img/clients/client2-after.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                    </div>
+                    <div class="card rounded-0">
+                      <div class="card-body">
+                        <h4 class="card-title">HARSH PATEL Residence</h4>
+                        <p class="card-text">We transformed the space into a perfect harmony of style and functionality.
+                          Every detail is thoughtfully designed to elevate your living experience.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="d-flex align-items-center">
+                      <div class="w-50 clients-before">
+                        <img src="assets/img/clients/client1-before.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                      <div class="w-50 clients-after">
+                        <img src="assets/img/clients/client2-after.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                    </div>
+                    <div class="card rounded-0">
+                      <div class="card-body">
+                        <h4 class="card-title">HARSH PATEL Residence</h4>
+                        <p class="card-text">We transformed the space into a perfect harmony of style and functionality.
+                          Every detail is thoughtfully designed to elevate your living experience.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 portfolio-item isotope-item filter-dining">
+              <div class="swiper init-swiper ps-lg-5 ms-lg-5 ps-3 ms-3">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 600,
+                    
+                    "slidesPerView": "auto",
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    },
+                    "breakpoints": {
+                      "320": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 16
+                      },
+                      "480": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 16
+                      },
+                      "640": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 16
+                      },
+                      "992": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 16
+                      }
+                    }
+                  }
+                </script>
+                <div class="swiper-wrapper align-items-center">
+                  <div class="swiper-slide">
+                    <div class="d-flex align-items-center">
+                      <div class="w-50 clients-before">
+                        <img src="assets/img/clients/client1-before.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                      <div class="w-50 clients-after">
+                        <img src="assets/img/clients/client2-after.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                    </div>
+                    <div class="card rounded-0">
+                      <div class="card-body">
+                        <h4 class="card-title">HARSH PATEL Residence</h4>
+                        <p class="card-text">We transformed the space into a perfect harmony of style and functionality.
+                          Every detail is thoughtfully designed to elevate your living experience.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="d-flex align-items-center">
+                      <div class="w-50 clients-before">
+                        <img src="assets/img/clients/client1-before.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                      <div class="w-50 clients-after">
+                        <img src="assets/img/clients/client2-after.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                    </div>
+                    <div class="card rounded-0">
+                      <div class="card-body">
+                        <h4 class="card-title">HARSH PATEL Residence</h4>
+                        <p class="card-text">We transformed the space into a perfect harmony of style and functionality.
+                          Every detail is thoughtfully designed to elevate your living experience.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="d-flex align-items-center">
+                      <div class="w-50 clients-before">
+                        <img src="assets/img/clients/client1-before.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                      <div class="w-50 clients-after">
+                        <img src="assets/img/clients/client2-after.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                    </div>
+                    <div class="card rounded-0">
+                      <div class="card-body">
+                        <h4 class="card-title">HARSH PATEL Residence</h4>
+                        <p class="card-text">We transformed the space into a perfect harmony of style and functionality.
+                          Every detail is thoughtfully designed to elevate your living experience.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 portfolio-item isotope-item filter-bedroom">
+              <div class="swiper init-swiper ps-lg-5 ms-lg-5 ps-3 ms-3">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 600,
+                    
+                    "slidesPerView": "auto",
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    },
+                    "breakpoints": {
+                      "320": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 16
+                      },
+                      "480": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 16
+                      },
+                      "640": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 16
+                      },
+                      "992": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 16
+                      }
+                    }
+                  }
+                </script>
+                <div class="swiper-wrapper align-items-center">
+                  <div class="swiper-slide">
+                    <div class="d-flex align-items-center">
+                      <div class="w-50 clients-before">
+                        <img src="assets/img/clients/client1-before.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                      <div class="w-50 clients-after">
+                        <img src="assets/img/clients/client2-after.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                    </div>
+                    <div class="card rounded-0">
+                      <div class="card-body">
+                        <h4 class="card-title">HARSH PATEL Residence</h4>
+                        <p class="card-text">We transformed the space into a perfect harmony of style and functionality.
+                          Every detail is thoughtfully designed to elevate your living experience.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="d-flex align-items-center">
+                      <div class="w-50 clients-before">
+                        <img src="assets/img/clients/client1-before.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                      <div class="w-50 clients-after">
+                        <img src="assets/img/clients/client2-after.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                    </div>
+                    <div class="card rounded-0">
+                      <div class="card-body">
+                        <h4 class="card-title">HARSH PATEL Residence</h4>
+                        <p class="card-text">We transformed the space into a perfect harmony of style and functionality.
+                          Every detail is thoughtfully designed to elevate your living experience.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="d-flex align-items-center">
+                      <div class="w-50 clients-before">
+                        <img src="assets/img/clients/client1-before.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                      <div class="w-50 clients-after">
+                        <img src="assets/img/clients/client2-after.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                    </div>
+                    <div class="card rounded-0">
+                      <div class="card-body">
+                        <h4 class="card-title">HARSH PATEL Residence</h4>
+                        <p class="card-text">We transformed the space into a perfect harmony of style and functionality.
+                          Every detail is thoughtfully designed to elevate your living experience.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 portfolio-item isotope-item filter-explore">
+              <div class="swiper init-swiper ps-lg-5 ms-lg-5 ps-3 ms-3">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 600,
+                    
+                    "slidesPerView": "auto",
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    },
+                    "breakpoints": {
+                      "320": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 16
+                      },
+                      "480": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 16
+                      },
+                      "640": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 16
+                      },
+                      "992": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 16
+                      }
+                    }
+                  }
+                </script>
+                <div class="swiper-wrapper align-items-center">
+                  <div class="swiper-slide">
+                    <div class="d-flex align-items-center">
+                      <div class="w-50 clients-before">
+                        <img src="assets/img/clients/client1-before.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                      <div class="w-50 clients-after">
+                        <img src="assets/img/clients/client2-after.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                    </div>
+                    <div class="card rounded-0">
+                      <div class="card-body">
+                        <h4 class="card-title">HARSH PATEL Residence</h4>
+                        <p class="card-text">We transformed the space into a perfect harmony of style and functionality.
+                          Every detail is thoughtfully designed to elevate your living experience.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="d-flex align-items-center">
+                      <div class="w-50 clients-before">
+                        <img src="assets/img/clients/client1-before.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                      <div class="w-50 clients-after">
+                        <img src="assets/img/clients/client2-after.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                    </div>
+                    <div class="card rounded-0">
+                      <div class="card-body">
+                        <h4 class="card-title">HARSH PATEL Residence</h4>
+                        <p class="card-text">We transformed the space into a perfect harmony of style and functionality.
+                          Every detail is thoughtfully designed to elevate your living experience.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="d-flex align-items-center">
+                      <div class="w-50 clients-before">
+                        <img src="assets/img/clients/client1-before.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                      <div class="w-50 clients-after">
+                        <img src="assets/img/clients/client2-after.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                    </div>
+                    <div class="card rounded-0">
+                      <div class="card-body">
+                        <h4 class="card-title">HARSH PATEL Residence</h4>
+                        <p class="card-text">We transformed the space into a perfect harmony of style and functionality.
+                          Every detail is thoughtfully designed to elevate your living experience.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="contact" class="contact section">
+      <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
+        <p>Find out the cost of your project</p>
+        <span class="d-block mx-auto w-50">We will generate and send a file with the cost and details of the
+          project</span>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 w-100">
+          <div class="col-lg-8 mx-auto">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+              data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <label for="name-field" class="pb-2">Your Name</label>
+                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email-field" class="pb-2">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="subject-field" class="pb-2">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="message-field" class="pb-2">Message</label>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-12 col-md-6">
+            <h4>LET’S STAY IN TOUCH</h4>
+          </div>
+          <div class="col-lg-8 col-md-6 ">
+            <p>Whether you’re looking to transform your space or have a design query, feel free to reach out. Stay
+              connected with us to explore inspiring projects and creative ideas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <img src="assets/img/logo.png" alt="">
+          </a>
+          <div class="footer-contact pt-3">
+            <p>We’d love to hear from you, connect with us to discuss your design needs or share your feedback!</p>
+            <p><strong><i class="bi bi-envelope-open"></i></strong> <span>dotsdesignail@gmail.com</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#projects">Project</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Our Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#about">About</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#planning">Planning</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#designing">Designing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#execution">Execution</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#architectural">Architectural</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <h4>Follow Us</h4>
+          <div class="social-links d-flex">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <span> Dotsdesign
+        © <span>2024</span> All Rights Reserved
+      </span>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
