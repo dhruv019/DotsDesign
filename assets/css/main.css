@@ -758,6 +758,15 @@ section,
   }
 }
 
+@media (max-width: 640px) {
+
+  section,
+  .section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Global Section Titles
 --------------------------------------------------------------*/
@@ -799,9 +808,6 @@ section,
   line-height: 28px;
   letter-spacing: 0.30000001192092896px;
   text-align: center;
-
-
-
 }
 
 .section-title p .description-title {
@@ -942,6 +948,21 @@ section,
   .hero .btn-watch-video {
     font-size: 13px;
   }
+
+  .section-title p {
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center !important;
+    padding-bottom: 10px;
+  }
+
+  .section-title span {
+    font-size: 14px;
+    line-height: 20px;
+    width: 100% !important;
+    text-align: center !important;
+
+  }
 }
 
 @keyframes up-down {
@@ -952,7 +973,12 @@ section,
   100% {
     transform: translateY(-10px);
   }
+
 }
+
+
+
+
 
 /*--------------------------------------------------------------
 # Featured Services Section
@@ -1145,7 +1171,8 @@ section,
 @media (max-width: 575px) {
   .portfolio .portfolio-filters li {
     font-size: 14px;
-    margin: 0 0 10px 0;
+    margin: 0 0 10px 2px;
+    min-width: 114px;
   }
 }
 
