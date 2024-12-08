@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Viaoda Libre';
   src: url('/assets/vendor/font/ViaodaLibre-Regular.woff2') format('woff2'),
-      url('/assets/vendor/font/ViaodaLibre-Regular.woff') format('woff');
+    url('/assets/vendor/font/ViaodaLibre-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -1487,4 +1487,38 @@ section,
 .bg-brown:active {
   background: #362114DE !important;
   border: 1px solid #362114DE !important;
+}
+
+.fs-64 {
+  font-size: 64px;
+}
+
+.fs-40 {
+  font-size: 40px;
+  line-height: 60px;
+}
+
+.fm-v {
+  font-family: var(--heading-font);
+}
+
+.fm-roboto {
+  font-family: var(--default-font);
+}
+
+.fs-18 {
+  font-size: 18px;
+
+}
+
+.about-bg {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  background: url("../img/Mett\ the\ team\ video.png");
+  background-size: cover;
+  background-position: bottom right;
 }
