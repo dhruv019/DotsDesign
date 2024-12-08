@@ -429,6 +429,58 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+  <script>
+    document.querySelector(".php-email-form").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent form submission
+
+      const form = e.target;
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === "success") {
+            Toastify({
+              text: "Thank you for contacting us. We'll get back to you shortly.",
+              duration: 5000,
+              gravity: "top",
+              position: "center",
+              backgroundColor: "#4CAF50",
+              close: true
+            }).showToast();
+            form.reset(); // Reset the form
+          } else {
+            Toastify({
+              text: "Failed to send your message. Please try again.",
+              duration: 5000,
+              gravity: "top",
+              position: "center",
+              backgroundColor: "#f44336",
+              close: true
+            }).showToast();
+          }
+        })
+        .catch(error => {
+          Toastify({
+            text: "An error occurred. Please try again later.",
+            duration: 5000,
+            gravity: "top",
+            position: "center",
+            backgroundColor: "#f44336",
+            close: true
+          }).showToast();
+        });
+    });
+  </script>
+
+
+
 </body>
 
 </html>
