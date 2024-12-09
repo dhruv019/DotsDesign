@@ -54,57 +54,124 @@
     </header>
 
     <main class="main">
-        <section class="about-us section pb-0">
+        <section id="services" class="services section bg-transparent">
             <div class="container">
-                <div class="row justify-content-center text-center">
-                    <div class="col-lg-12 col-md-6">
-                        <h4 class="fs-64 text-uppercase">Designing spaces for a better tomorrow.</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="about-bg">
-            </div>
-            <!-- <img class="img-fluid" src="assets/img/Mett the team video.png" alt="" srcset=""> -->
-        </section>
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2 text-uppercase fm-v">Our story</div>
-                    <div class="col-md-10">
-                        <div class="pb-4">
-                            Founded in early 2024, Dots is a young company bursting with fresh ideas. After working with
-                            Vadodara's finest architects, our founder saw the need for a firm that combines innovative
-                            design with high-quality aesthetics.
+                <div class="row g-0 w-100">
+                    <div
+                        class="col-lg-6 ps-0 ps-lg-5 pb-5 ps-lg-0 d-flex flex-column justify-content-center aos-init aos-animate">
+                        <div class="section-title ps-0 ps-lg-5">
+                            <p class="text-start">Services</p>
+                            <span class="d-block text-start">We provide interior design solutions,
+                                transforming
+                                spaces
+                                into functional
+                                and personalized environments. From concept to completion, we bring your vision to
+                                life.</span>
                         </div>
-                        <div>
-                            Our team excels in architecture, interior, and landscape design, ensuring a smooth process
-                            from concept to execution. Based in Vadodara, Gujarat, we focus on client-centric designs
-                            that transform spaces into stunning works of art. Our commitment to high-quality, fast, and
-                            reliable customer service ensures that every project exceeds expectations.
+                        <div class="about-content ps-0 ps-lg-5">
+                            <ul class="list-group list-unstyled">
+                                <li id="planning">
+                                    <div>
+                                        <h4 class="border-bottom ps-3 pb-2">Planning</h4>
+                                        <p class="ps-3">Thoughtful space planning to optimize functionality and style
+                                            while
+                                            aligning with
+                                            your
+                                            needs and
+                                            preferences.</p>
+                                    </div>
+                                </li>
+                                <li id="designing">
+                                    <div>
+                                        <h4 class="border-bottom ps-3 pb-2">Designing</h4>
+                                        <p class="ps-3">Creative and innovative design concepts that bring your dream
+                                            spaces
+                                            to life with
+                                            precision and elegance.</p>
+                                    </div>
+                                </li>
+                                <li id="execution">
+                                    <div>
+                                        <h4 class="border-bottom ps-3 pb-2">Execution</h4>
+                                        <p class="ps-3">Seamless execution with attention to detail, ensuring timely
+                                            delivery and impeccable
+                                            craftsmanship.</p>
+                                    </div>
+                                </li>
+                                <li id="architectural">
+                                    <div>
+                                        <h4 class="border-bottom ps-3 pb-2">Architectural</h4>
+                                        <p class="ps-3">Expert architectural solutions integrating modern design
+                                            principles
+                                            with structural
+                                            excellence for timeless spaces.</p>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
+
+                    </div>
+                    <div class="col-lg-6 aos-init aos-animate ps-0 ps-lg-5">
+                        <img src="assets/img/ourServices.png" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
+
         </section>
-        <section>
+
+        <section id="contact" class="contact section">
+            <div class="container section-title">
+                <p>Find out the cost of your project</p>
+                <span class="d-block mx-auto w-50">We will generate and send a file with the cost and details of the
+                    project</span>
+            </div>
+
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="fs-40">YASH SAJNANI</h4>
-                        <h6 class="fm-roboto fs-18 fw-normal">FOUNDER AND PRINCIPAL DESIGNER</h6>
-                        <p>Yash, the visionary behind Dots Design, is a passionate interior architect with 4 years of
-                            experience in creating timeless, functional spaces. Yash believes in transforming spaces to
-                            reflect the unique stories and lifestyles of clients, ensuring every project is a perfect
-                            harmony of innovation and elegance. With a keen eye for detail and a deep understanding of
-                            design principles, he specialize in blending aesthetics with functionality to craft
-                            personalized environments.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="assets/img/425268532_1161907785083689_4350174566540945330_n 1.png" alt="" srcset="">
-                    </div>
+                <div class="row g-0 w-100">
+                    <div class="col-lg-8 mx-auto">
+                        <form action="forms/contact.php" method="post" class="php-email-form">
+                            <div class="row gy-4">
+
+                                <div class="col-md-6">
+                                    <label for="name-field" class="pb-2">Your Name</label>
+                                    <input type="text" name="name" id="name-field" class="form-control" required="">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="email-field" class="pb-2">Your Email</label>
+                                    <input type="email" class="form-control" name="email" id="email-field" required="">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label for="subject-field" class="pb-2">Subject</label>
+                                    <input type="text" class="form-control" name="subject" id="subject-field"
+                                        required="">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label for="message-field" class="pb-2">Message</label>
+                                    <textarea class="form-control" name="message" rows="10" id="message-field"
+                                        required=""></textarea>
+                                </div>
+
+                                <div class="col-md-12 text-center">
+                                    <div class="loading">Loading</div>
+                                    <div class="error-message"></div>
+                                    <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                                    <button type="submit">Send Message</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div><!-- End Contact Form -->
+
                 </div>
+
             </div>
+
         </section>
+
     </main>
 
     <footer id="footer" class="footer">
@@ -203,6 +270,9 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 </body>
 

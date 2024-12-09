@@ -10,7 +10,7 @@
 :root {
   --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Viaoda Libre", serif;
-  --nav-font: "Open Sans", sans-serif;
+  --nav-font: "Viaoda Libre", sans-serif;
 }
 
 :root {
@@ -1521,4 +1521,12 @@ section,
   background: url("../img/Mett\ the\ team\ video.png");
   background-size: cover;
   background-position: bottom right;
+}
+
+.fs-32 {
+  font-size: 32px !important;
+}
+
+.fs-14 {
+  font-size: 14px !important;
 }
