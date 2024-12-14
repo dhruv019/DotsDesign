@@ -475,6 +475,22 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
+  <!-- Sweet Alert https://www.youtube.com/watch?v=h2bLhhAli0o&t=745s -->
+  <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    var messageText = "<?= $_SESSION['status'] ?? '';  ?>";
+    if (messageText != '') {
+      Swal.fire({
+        title: "FORM SUBMITTED!",
+        text: messageText,
+        icon: "success"
+      });
+      <?php unset($_SESSION['status']); ?>
+    }
+  </script> -->
+
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 

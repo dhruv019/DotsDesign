@@ -79,20 +79,33 @@ if (isset($_POST['submit'])) {
 
     // Send email
     if ($mail->send()) {
-
-      $_SESSION['status'] = "Thank you for contacting DotsDesign. We will get back to you soon.";
-      header("Location: {$_SERVER['HTTP_REFERER']}");
-      exit(0);
-    } 
-    else {
-      $_SESSION['status'] = "Failed to send your message. Please try again. Mailer Error: {$mail->ErrorInfo}";
-      header("Location: {$_SERVER['HTTP_REFERER']}");
-      exit(0);
+      echo json_encode(['status' => 'success', 'message' => 'Message has been sent']);
+    } else {
+      echo json_encode(['status' => 'error', 'message' => 'Message could not be sent.']);
     }
   } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo json_encode(['status' => 'error', 'message' => "Mailer Error: {$mail->ErrorInfo}"]);
   }
 } else {
-  header('Location: index.html');
-  exit(0);
+  echo json_encode(['status' => 'error', 'message' => 'Invalid request']);
 }
+
+// *************** Sweet Alert *************** //
+//     if ($mail->send()) {
+
+//       $_SESSION['status'] = "Thank you for contacting DotsDesign. We will get back to you soon.";
+//       header("Location: {$_SERVER['HTTP_REFERER']}");
+//       exit(0);
+//     } 
+//     else {
+//       $_SESSION['status'] = "Failed to send your message. Please try again. Mailer Error: {$mail->ErrorInfo}";
+//       header("Location: {$_SERVER['HTTP_REFERER']}");
+//       exit(0);
+//     }
+//   } catch (Exception $e) {
+//     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+//   }
+// } else {
+//   header('Location: index.html');
+//   exit(0);
+// }
