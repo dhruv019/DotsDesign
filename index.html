@@ -291,39 +291,88 @@
       <div class="container">
         <div class="row g-0 w-100">
           <div class="col-lg-8 mx-auto">
-            <form action="forms/contact.php" method="post" class="php-email-form">
+            <form action="forms/contact.php" method="post" class="php-email-form needs-validation" novalidate>
               <div class="row gy-4">
-
+            
+                <!-- Full Name -->
                 <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                  <label for="name-field" class="pb-2">Full Name</label>
+                  <input type="text" name="name" id="name-field" class="form-control" pattern="[A-Za-z\s]+" title="Name should contain only letters and spaces" required>
+                  <div class="invalid-feedback">
+                    Please enter a valid name (letters and spaces only).
+                  </div>
                 </div>
-
+            
+                <!-- Phone Number -->
                 <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                  <label for="phonenumber-field" class="pb-2">Phone Number</label>
+                  <input type="tel" class="form-control" name="phonenumber" id="phonenumber-field" pattern="\d{10}" title="Phone number must be 10 digits" required>
+                  <div class="invalid-feedback">
+                    Please enter a valid 10-digit phone number.
+                  </div>
                 </div>
-
+            
+                <!-- Email ID -->
                 <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                  <label for="email-field" class="pb-2">Email ID</label>
+                  <input type="email" class="form-control" name="email" id="email-field" required>
+                  <div class="invalid-feedback">
+                    Please enter a valid email address.
+                  </div>
                 </div>
-
+            
+                <!-- Squarefeet -->
                 <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                  <label for="squarefeet-field" class="pb-2">Squarefeet</label>
+                  <input type="number" name="squarefeet" id="squarefeet-field" class="form-control" min="1" required>
+                  <div class="invalid-feedback">
+                    Please enter a valid square feet value (greater than 0).
+                  </div>
                 </div>
-
+                
+                <!-- Requirements Dropdown -->
+                <div class="col-md-12">
+                  <label for="requirements-field" class="pb-2">Requirements</label>
+                  <select name="requirements" id="requirements-field" class="form-select" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Interior Design">Interior Design</option>
+                    <option value="Architecture">Architecture</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a requirement.
+                  </div>
+                </div>
+            
+                <!-- Submit Button -->
                 <div class="col-md-12 text-center">
                   <div class="loading">Loading</div>
                   <div class="error-message"></div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
-
+            
                   <button type="submit">Send Message</button>
                 </div>
-
+            
               </div>
             </form>
+            
+            <!-- <script>
+              // Bootstrap Validation
+              (function () {
+                'use strict';
+                const forms = document.querySelectorAll('.needs-validation');
+            
+                Array.prototype.slice.call(forms).forEach(function (form) {
+                  form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                  }, false);
+                });
+              })();
+            </script> -->
+            
           </div><!-- End Contact Form -->
 
         </div>
@@ -447,7 +496,7 @@
         .then(data => {
           if (data.status === "success") {
             Toastify({
-              text: "Thank you for contacting us. We'll get back to you shortly.",
+              text: "Thank you for contacting DotsDesign. We'll get back to you shortly.",
               duration: 5000,
               gravity: "top",
               position: "center",
@@ -478,8 +527,6 @@
         });
     });
   </script>
-
-
 
 </body>
 

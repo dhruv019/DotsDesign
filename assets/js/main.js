@@ -232,4 +232,55 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * Real-time form field validation
+   */
+  function realTimeFieldValidation() {
+    'use strict';
+    
+    const forms = document.querySelectorAll('.needs-validation');
+    
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      // Add event listeners to each input, select, or textarea in the form
+      form.querySelectorAll('input, select, textarea').forEach(function (field) {
+        
+        // Validate on blur (when the user leaves the field)
+        field.addEventListener('blur', function () {
+          validateField(field);
+        });
+        
+        // Optionally, validate on input (as the user types)
+        field.addEventListener('input', function () {
+          validateField(field);
+        });
+      });
+
+      // Validate the entire form on submit
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }
+
+  /**
+   * Validate a single field
+   */
+  function validateField(field) {
+    if (!field.checkValidity()) {
+      field.classList.add('is-invalid'); // Bootstrap class for invalid fields
+      field.classList.remove('is-valid'); // Remove valid class if previously added
+    } else {
+      field.classList.add('is-valid'); // Bootstrap class for valid fields
+      field.classList.remove('is-invalid'); // Remove invalid class if previously added
+    }
+  }
+
+  // Initialize validation when DOM is loaded
+  document.addEventListener('DOMContentLoaded', realTimeFieldValidation);
+
+
 })();
