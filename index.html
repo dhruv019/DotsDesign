@@ -39,7 +39,7 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a class="fs-5 text-uppercase" href="#projects">Projects</a></li>
+            <li><a class="fs-5 text-uppercase" href="projects/projectHomePage.html">Projects</a></li>
             <li><a class="fs-5 text-uppercase" href="ourServices.html">Our Services</a></li>
             <li><a class="fs-5 text-uppercase" href="about.html">About</a></li>
             <li><a class="fs-5 text-uppercase" href="contactUs.html">Contact</a></li>
@@ -60,7 +60,7 @@
           <h1 class="text-white text-center">INNOVATIVE INTERIOR DESIGN</h1>
           <p class="text-white text-center">DESIGNING YOUR VISION</p>
           <div class="d-flex align-items-center justify-content-center gap-3 flex-column flex-md-row">
-            <a href="#about" class="btn-get-started">Schedule call</a>
+            <a href="#about" class="btn-get-started">Schedule Call</a>
             <a href="#ourwork" class="btn-get-started secondary">Explore Work</a>
           </div>
 
@@ -291,7 +291,7 @@
       <div class="container">
         <div class="row g-0 w-100">
           <div class="col-lg-8 mx-auto">
-            <form action="forms/contact.php" method="post" class="php-email-form needs-validation" novalidate>
+            <form id="contactForm" action="forms/contact.php" method="post" class="php-email-form needs-validation" novalidate>
               <div class="row gy-4">
             
                 <!-- Full Name -->
@@ -345,11 +345,10 @@
             
                 <!-- Submit Button -->
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-            
-                  <button type="submit">Send Message</button>
+                  <button type="submit" id="submit-button">
+                    <span class="button-text">Send Message</span>
+                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                  </button>
                 </div>
             
               </div>
@@ -475,74 +474,126 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
-  <!-- Sweet Alert https://www.youtube.com/watch?v=h2bLhhAli0o&t=745s -->
-  <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+  <!-- Sweet Alert -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
-    var messageText = "<?= $_SESSION['status'] ?? '';  ?>";
-    if (messageText != '') {
-      Swal.fire({
-        title: "FORM SUBMITTED!",
-        text: messageText,
-        icon: "success"
-      });
-      <?php unset($_SESSION['status']); ?>
+
+
+$(document).ready(function () {
+  const form = $('#contactForm');
+  const submitButton = $('#submit-button');
+  const buttonText = submitButton.find('.button-text');
+  const spinner = submitButton.find('.spinner-border');
+
+  // Function to reset the validation classes and icons
+  function resetValidation() {
+    form.find('.form-control, .form-select')
+      .removeClass('is-valid is-invalid')
+      .siblings('.invalid-feedback, .valid-feedback')
+      .hide();
+  }
+
+  // Function to validate input in real-time
+  function validateInput(input) {
+    if (input[0].checkValidity()) {
+      input.addClass('is-valid').removeClass('is-invalid');
+      input.siblings('.invalid-feedback').hide();
+      input.siblings('.valid-feedback').show();
+    } else {
+      input.addClass('is-invalid').removeClass('is-valid');
+      input.siblings('.invalid-feedback').show();
+      input.siblings('.valid-feedback').hide();
     }
-  </script> -->
+  }
+
+  // Form submission logic
+  form.on('submit', function (e) {
+    e.preventDefault();
+    
+    // Validate all fields before submission
+    let isValid = true;
+    form.find('.form-control, .form-select').each(function() {
+      if (!this.checkValidity()) {
+        isValid = false;
+        validateInput($(this));
+      }
+    });
+
+    if (!isValid) {
+      return;
+    }
+
+    // Show spinner and disable the button
+    submitButton.prop('disabled', true);
+    buttonText.addClass('d-none');
+    spinner.removeClass('d-none');
+
+    const formData = form.serialize();
+
+    // Simulate AJAX request
+    $.ajax({
+      type: 'POST',
+      url: 'forms/contact.php',
+      data: formData,
+      dataType: 'json',
+      success: function (response) {
+        // Restore button state
+        submitButton.prop('disabled', false);
+        buttonText.removeClass('d-none');
+        spinner.addClass('d-none');
+
+        if (response.status === 'success') {
+          Swal.fire({
+            title: 'Form Submitted!',
+            text: response.message,
+            icon: 'success',
+            confirmButtonText: 'OK',
+          }).then(() => {
+            form[0].reset(); // Reset form fields
+            resetValidation(); // Remove validation states
+          });
+        } else {
+          Swal.fire({
+            title: 'Submission Failed',
+            text: response.message,
+            icon: 'error',
+            confirmButtonText: 'Try Again',
+          });
+        }
+      },
+      error: function () {
+        submitButton.prop('disabled', false);
+        buttonText.removeClass('d-none');
+        spinner.addClass('d-none');
+        Swal.fire({
+          title: 'Error!',
+          text: 'Something went wrong. Please try again.',
+          icon: 'error',
+        });
+      },
+    });
+  });
+
+  // Real-time validation while typing
+  form.find('.form-control, .form-select').on('input', function () {
+    validateInput($(this));
+  });
+
+  // Validation on blur (keeping this for additional validation)
+  form.find('.form-control, .form-select').on('focusout', function () {
+    validateInput($(this));
+  });
+});
+
+  </script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
-  <script>
-    document.querySelector(".php-email-form").addEventListener("submit", function (e) {
-      e.preventDefault(); // Prevent form submission
-
-      const form = e.target;
-      const formData = new FormData(form);
-
-      fetch(form.action, {
-        method: "POST",
-        body: formData,
-      })
-        .then(response => response.json())
-        .then(data => {
-          if (data.status === "success") {
-            Toastify({
-              text: "Thank you for contacting DotsDesign. We'll get back to you shortly.",
-              duration: 5000,
-              gravity: "top",
-              position: "center",
-              backgroundColor: "#4CAF50",
-              close: true
-            }).showToast();
-            form.reset(); // Reset the form
-          } else {
-            Toastify({
-              text: "Failed to send your message. Please try again.",
-              duration: 5000,
-              gravity: "top",
-              position: "center",
-              backgroundColor: "#f44336",
-              close: true
-            }).showToast();
-          }
-        })
-        .catch(error => {
-          Toastify({
-            text: "An error occurred. Please try again later.",
-            duration: 5000,
-            gravity: "top",
-            position: "center",
-            backgroundColor: "#f44336",
-            close: true
-          }).showToast();
-        });
-    });
-  </script>
 
 </body>
 
