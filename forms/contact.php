@@ -13,7 +13,7 @@ require '../PHPMailer/src/Exception.php';
 // if (isset($_POST['submit'])) {
 
 // Replace with your real receiving email address
-$receiving_email_address = 'dertdhruv@gmail.com';
+$receiving_email_address = 'inquiries@dotsdesign.in';
 
 try {
   // Check if all required fields are set
@@ -42,8 +42,8 @@ try {
   $mail->isSMTP();
   $mail->Host = 'smtp.gmail.com';
   $mail->SMTPAuth = true;
-  $mail->Username = 'dertdhruv@gmail.com'; // Your Gmail address
-  $mail->Password = 'rgppbrxgpbptqphi'; // Your app password
+  $mail->Username = 'dotsdesignail@gmail.com'; // Your Gmail address
+  $mail->Password = 'rpdlzufhujqxulqi'; // Your app password
   $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
   $mail->Port = 587;
   $mail->SMTPDebug = 0;
