@@ -1536,3 +1536,80 @@ section,
 .fs-14 {
   font-size: 14px !important;
 }
+
+.hero-top {
+  top: 20px;
+  left: 30px;
+}
+
+.hero-top p {
+  color: white;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+
+}
+
+.hero-top p:first-child {
+  font-family: Viaoda Libre;
+  font-size: 56px;
+  line-height: 67.2px;
+  letter-spacing: -0.02em;
+
+}
+
+.fs-28 {
+  font-family: Viaoda Libre;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 42px;
+  text-align: left;
+}
+
+.cust-icons-next .swiper-button-next::after,
+.cust-icons-next .swiper-button-prev::after {
+  font-size: 16px;
+  color: #5F5852B2;
+
+}
+
+.cust-icons-next .swiper-button-prev {
+  right: 40px;
+  left: auto;
+  border: 1px solid #5F5852B2;
+  border-radius: 50%;
+  height: 28px;
+  top: 26px;
+}
+
+.cust-icons-next .swiper-button-next {
+  border: 1px solid #5F5852B2;
+  border-radius: 50%;
+  height: 28px;
+  top: 26px;
+}
+
+.isotope-item .swiper-button-next {
+  width: 35px;
+  background: #f5f2ed;
+  height: calc(100% + 22px);
+  top: 0;
+  right: -3px;
+}
+
+.isotope-item .swiper-button-next::after,
+.isotope-item .swiper-button-prev::after {
+  font-size: 24px;
+  color: #5F5852B2;
+
+}
+
+.isotope-item .swiper-button-prev {
+  width: 35px;
+  background: #f5f2ed;
+  height: calc(100% + 22px);
+  top: 0;
+  left: -3px;
+}

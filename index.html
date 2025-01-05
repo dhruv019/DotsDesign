@@ -216,7 +216,7 @@
           </ul>
           <div class="row gy-4 isotope-container">
             <div class="col-md-12 portfolio-item isotope-item filter-living">
-              <div class="swiper init-swiper ps-lg-5 ms-lg-5 ps-0 ms-0">
+              <div class="swiper init-swiper px-lg-5 mx-lg-5 px-0 mx-0">
                 <script type="application/json" class="swiper-config">
                   {
                     "loop": true,
@@ -227,6 +227,10 @@
                       "el": ".swiper-pagination",
                       "type": "bullets",
                       "clickable": true
+                    },
+                    "navigation": {
+                      "nextEl": ".swiper-button-next",
+                      "prevEl": ".swiper-button-prev"
                     },
                     "breakpoints": {
                       "320": {
@@ -248,6 +252,7 @@
                     }
                   }
                 </script>
+                <div class="swiper-button-next"></div>
                 <div class="swiper-wrapper align-items-center">
                   <div class="swiper-slide">
                     <div class="row g-0 w-100">
@@ -268,7 +273,28 @@
                       </div>
                     </div>
                   </div>
+                  <div class="swiper-slide">
+                    <div class="row g-0 w-100">
+                      <div class="col-md-6 col-sm-12 clients-before">
+                        <img src="assets/img/clients/client1-before.png" class="img-fluid" alt="">
+                        <div>Before</div>
+                      </div>
+                      <div class="col-md-6 col-ms-12 clients-after">
+                        <img src="assets/img/clients/client2-after.png" class="img-fluid" alt="">
+                        <div>after</div>
+                      </div>
+                    </div>
+                    <div class="card rounded-0">
+                      <div class="card-body">
+                        <h4 class="card-title">HARSH PATEL Residence</h4>
+                        <p class="card-text">We transformed the space into a perfect harmony of style and functionality.
+                          Every detail is thoughtfully designed to elevate your living experience.</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                <div class="swiper-button-prev"></div>
+
               </div>
             </div>
           </div>
@@ -291,27 +317,30 @@
       <div class="container">
         <div class="row g-0 w-100">
           <div class="col-lg-8 mx-auto">
-            <form id="contactForm" action="forms/contact.php" method="post" class="php-email-form needs-validation" novalidate>
+            <form id="contactForm" action="forms/contact.php" method="post" class="php-email-form needs-validation"
+              novalidate>
               <div class="row gy-4">
-            
+
                 <!-- Full Name -->
                 <div class="col-md-6">
                   <label for="name-field" class="pb-2">Full Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" pattern="[A-Za-z\s]+" title="Name should contain only letters and spaces" required>
+                  <input type="text" name="name" id="name-field" class="form-control" pattern="[A-Za-z\s]+"
+                    title="Name should contain only letters and spaces" required>
                   <div class="invalid-feedback">
                     Please enter a valid name (letters and spaces only).
                   </div>
                 </div>
-            
+
                 <!-- Phone Number -->
                 <div class="col-md-6">
                   <label for="phonenumber-field" class="pb-2">Phone Number</label>
-                  <input type="tel" class="form-control" name="phonenumber" id="phonenumber-field" pattern="\d{10}" title="Phone number must be 10 digits" required>
+                  <input type="tel" class="form-control" name="phonenumber" id="phonenumber-field" pattern="\d{10}"
+                    title="Phone number must be 10 digits" required>
                   <div class="invalid-feedback">
                     Please enter a valid 10-digit phone number.
                   </div>
                 </div>
-            
+
                 <!-- Email ID -->
                 <div class="col-md-12">
                   <label for="email-field" class="pb-2">Email ID</label>
@@ -320,7 +349,7 @@
                     Please enter a valid email address.
                   </div>
                 </div>
-            
+
                 <!-- Squarefeet -->
                 <div class="col-md-12">
                   <label for="squarefeet-field" class="pb-2">Squarefeet</label>
@@ -329,7 +358,7 @@
                     Please enter a valid square feet value (greater than 0).
                   </div>
                 </div>
-                
+
                 <!-- Requirements Dropdown -->
                 <div class="col-md-12">
                   <label for="requirements-field" class="pb-2">Requirements</label>
@@ -342,7 +371,7 @@
                     Please select a requirement.
                   </div>
                 </div>
-            
+
                 <!-- Submit Button -->
                 <div class="col-md-12 text-center">
                   <button type="submit" id="submit-button">
@@ -350,10 +379,10 @@
                     <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
                   </button>
                 </div>
-            
+
               </div>
             </form>
-            
+
             <!-- <script>
               // Bootstrap Validation
               (function () {
@@ -371,7 +400,7 @@
                 });
               })();
             </script> -->
-            
+
           </div><!-- End Contact Form -->
 
         </div>
@@ -481,111 +510,111 @@
   <script>
 
 
-$(document).ready(function () {
-  const form = $('#contactForm');
-  const submitButton = $('#submit-button');
-  const buttonText = submitButton.find('.button-text');
-  const spinner = submitButton.find('.spinner-border');
+    $(document).ready(function () {
+      const form = $('#contactForm');
+      const submitButton = $('#submit-button');
+      const buttonText = submitButton.find('.button-text');
+      const spinner = submitButton.find('.spinner-border');
 
-  // Function to reset the validation classes and icons
-  function resetValidation() {
-    form.find('.form-control, .form-select')
-      .removeClass('is-valid is-invalid')
-      .siblings('.invalid-feedback, .valid-feedback')
-      .hide();
-  }
-
-  // Function to validate input in real-time
-  function validateInput(input) {
-    if (input[0].checkValidity()) {
-      input.addClass('is-valid').removeClass('is-invalid');
-      input.siblings('.invalid-feedback').hide();
-      input.siblings('.valid-feedback').show();
-    } else {
-      input.addClass('is-invalid').removeClass('is-valid');
-      input.siblings('.invalid-feedback').show();
-      input.siblings('.valid-feedback').hide();
-    }
-  }
-
-  // Form submission logic
-  form.on('submit', function (e) {
-    e.preventDefault();
-    
-    // Validate all fields before submission
-    let isValid = true;
-    form.find('.form-control, .form-select').each(function() {
-      if (!this.checkValidity()) {
-        isValid = false;
-        validateInput($(this));
+      // Function to reset the validation classes and icons
+      function resetValidation() {
+        form.find('.form-control, .form-select')
+          .removeClass('is-valid is-invalid')
+          .siblings('.invalid-feedback, .valid-feedback')
+          .hide();
       }
-    });
 
-    if (!isValid) {
-      return;
-    }
-
-    // Show spinner and disable the button
-    submitButton.prop('disabled', true);
-    buttonText.addClass('d-none');
-    spinner.removeClass('d-none');
-
-    const formData = form.serialize();
-
-    // Simulate AJAX request
-    $.ajax({
-      type: 'POST',
-      url: 'forms/contact.php',
-      data: formData,
-      dataType: 'json',
-      success: function (response) {
-        // Restore button state
-        submitButton.prop('disabled', false);
-        buttonText.removeClass('d-none');
-        spinner.addClass('d-none');
-
-        if (response.status === 'success') {
-          Swal.fire({
-            title: 'Form Submitted!',
-            text: response.message,
-            icon: 'success',
-            confirmButtonText: 'OK',
-          }).then(() => {
-            form[0].reset(); // Reset form fields
-            resetValidation(); // Remove validation states
-          });
+      // Function to validate input in real-time
+      function validateInput(input) {
+        if (input[0].checkValidity()) {
+          input.addClass('is-valid').removeClass('is-invalid');
+          input.siblings('.invalid-feedback').hide();
+          input.siblings('.valid-feedback').show();
         } else {
-          Swal.fire({
-            title: 'Submission Failed',
-            text: response.message,
-            icon: 'error',
-            confirmButtonText: 'Try Again',
-          });
+          input.addClass('is-invalid').removeClass('is-valid');
+          input.siblings('.invalid-feedback').show();
+          input.siblings('.valid-feedback').hide();
         }
-      },
-      error: function () {
-        submitButton.prop('disabled', false);
-        buttonText.removeClass('d-none');
-        spinner.addClass('d-none');
-        Swal.fire({
-          title: 'Error!',
-          text: 'Something went wrong. Please try again.',
-          icon: 'error',
+      }
+
+      // Form submission logic
+      form.on('submit', function (e) {
+        e.preventDefault();
+
+        // Validate all fields before submission
+        let isValid = true;
+        form.find('.form-control, .form-select').each(function () {
+          if (!this.checkValidity()) {
+            isValid = false;
+            validateInput($(this));
+          }
         });
-      },
+
+        if (!isValid) {
+          return;
+        }
+
+        // Show spinner and disable the button
+        submitButton.prop('disabled', true);
+        buttonText.addClass('d-none');
+        spinner.removeClass('d-none');
+
+        const formData = form.serialize();
+
+        // Simulate AJAX request
+        $.ajax({
+          type: 'POST',
+          url: 'forms/contact.php',
+          data: formData,
+          dataType: 'json',
+          success: function (response) {
+            // Restore button state
+            submitButton.prop('disabled', false);
+            buttonText.removeClass('d-none');
+            spinner.addClass('d-none');
+
+            if (response.status === 'success') {
+              Swal.fire({
+                title: 'Form Submitted!',
+                text: response.message,
+                icon: 'success',
+                confirmButtonText: 'OK',
+              }).then(() => {
+                form[0].reset(); // Reset form fields
+                resetValidation(); // Remove validation states
+              });
+            } else {
+              Swal.fire({
+                title: 'Submission Failed',
+                text: response.message,
+                icon: 'error',
+                confirmButtonText: 'Try Again',
+              });
+            }
+          },
+          error: function () {
+            submitButton.prop('disabled', false);
+            buttonText.removeClass('d-none');
+            spinner.addClass('d-none');
+            Swal.fire({
+              title: 'Error!',
+              text: 'Something went wrong. Please try again.',
+              icon: 'error',
+            });
+          },
+        });
+      });
+
+      // Real-time validation while typing
+      form.find('.form-control, .form-select').on('input', function () {
+        validateInput($(this));
+      });
+
+      // Validation on blur (keeping this for additional validation)
+      form.find('.form-control, .form-select').on('focusout', function () {
+        validateInput($(this));
+      });
     });
-  });
-
-  // Real-time validation while typing
-  form.find('.form-control, .form-select').on('input', function () {
-    validateInput($(this));
-  });
-
-  // Validation on blur (keeping this for additional validation)
-  form.find('.form-control, .form-select').on('focusout', function () {
-    validateInput($(this));
-  });
-});
 
   </script>
 
