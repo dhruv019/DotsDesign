@@ -1613,3 +1613,36 @@ section,
   top: 0;
   left: -3px;
 }
+
+.init-swiper {
+  padding: 0 1rem;
+}
+
+.swiper-slide {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.explore-btn {
+  border-radius: 3.19px;
+  border: 0.798px solid rgba(0, 0, 0, 0.50);
+  opacity: 0.8;
+  background: rgba(197, 191, 175, 0.55);
+  color: black;
+  align-self: start; /* Ensures button stays aligned to the left */
+}
+
+.our-projects-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}

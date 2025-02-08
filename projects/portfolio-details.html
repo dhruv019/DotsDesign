@@ -52,9 +52,9 @@
 
     </header>
     <main class="main">
-        <div class="container">
+        <div class="container-fluid">
             <div class="position-relative">
-                <img class="img-fluid" src="../assets/img/clients/DSC09407.png" alt="" srcset="">
+                <img class="img-fluid w-100" src="../assets/img/clients/DSC09407.png" alt="" srcset="">
                 <div class="position-absolute hero-top new">
                     <p>SHILP RESIDENCE</p>
                     <p class="col-lg-6 col-md-12">
@@ -65,13 +65,13 @@
                 </div>
             </div>
         </div>
-        <div class="container mb-5">
+        <div class="container-fluid mb-5">
             <div class="row w-100 g-0 mt-5 pt-5">
                 <div class="col-md-3">
                     <img class="img-fluid" src="../assets/img/FOYER 1.png" alt="" srcset="">
                 </div>
                 <div class="col-md-3 ps-0 ps-sm-3 my-3 my-sm-0">
-                    <p class="text-capitalize mb-0 pb-0 fm-v fs-32 text-center"> About the project</p>
+                    <p class="text-capitalize mb-0 pb-0 fm-v fs-32">ABOUT THE PROJECT</p>
                 </div>
                 <div class="col-md-6">
                     <div>
@@ -105,50 +105,53 @@
                 </div>
             </div>
         </div>
-        <div class="container mt-5 mb-5 pb-5">
-
-            <div class="swiper init-swiper">
-                <script type="application/json" class="swiper-config">
-                  {
-                    "loop": true,
-                    "speed": 600,
-                    
-                    "slidesPerView": "auto",
-                    "pagination": {
+        <div class="container-fluid px-12px mt-5 mb-5 pt-5">
+            <div class="swiper init-swiper p-0">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 1000,
+                  "autoplay": {
+                      "delay": 3000,
+                      "disableOnInteraction": false
+                  },
+                  "slidesPerView": 3,
+                  "spaceBetween": 16,
+                  "pagination": {
                       "el": ".swiper-pagination",
                       "type": "bullets",
                       "clickable": true
-                    },
-                    "navigation": {
-                        "nextEl": ".swiper-button-next",
-                        "prevEl": ".swiper-button-prev"
-                      },
-                    "breakpoints": {
+                  },
+                  "navigation": {
+                      "nextEl": ".swiper-button-next",
+                      "prevEl": ".swiper-button-prev"
+                  },
+                  "breakpoints": {
                       "320": {
-                        "slidesPerView": 1,
-                        "spaceBetween": 16
+                          "slidesPerView": 1,
+                          "spaceBetween": 8
                       },
                       "480": {
-                        "slidesPerView": 2,
-                        "spaceBetween": 16
+                          "slidesPerView": 2,
+                          "spaceBetween": 8
                       },
                       "640": {
-                        "slidesPerView": 3,
-                        "spaceBetween": 16
+                          "slidesPerView": 3,
+                          "spaceBetween": 8
                       },
                       "992": {
-                        "slidesPerView": 3,
-                        "spaceBetween": 16
+                          "slidesPerView": 3,
+                          "spaceBetween": 16
                       }
-                    }
                   }
+              }
                 </script>
                 <div class="d-flex align-items-center position-relative cust-icons-next">
                     <div class="fs-28">
                         GALLERY
                     </div>
                     <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-prev me-1"></div>
                 </div>
                 <div class="swiper-wrapper align-items-center">
                     <div class="swiper-slide"><img src="../assets/img/DSC09452 2.png" class="img-fluid" alt="">
@@ -163,7 +166,6 @@
                     </div>
                     <div class="swiper-slide"><img src="../assets/img/DSC09452 2.png" class="img-fluid" alt="">
                     </div>
-
                 </div>
             </div>
 
@@ -195,90 +197,79 @@
                     </div>
                 </div>
             </div>
-            <div class="row w-100 g-0 mt-5 pt-5">
-                <div class="col-md-1">
-
-                </div>
-                <div class="col-md-2 h-100 fs-32 fm-v">
-                    Our projects
-                    <button class="btn-sm btn btn-primary mt-auto">Explore Work</button>
-                </div>
-                <div class="col-md-9">
-                    <div class="swiper init-swiper">
-                        <script type="application/json" class="swiper-config">
-                          {
-                            "loop": true,
-                            "speed": 600,
-                            
-                            "slidesPerView": "auto",
-                            "pagination": {
+        </div>
+        <div class="container-fluid my-5 py-5">
+          <div class="row w-100 g-0 align-items-center align-items-stretch">
+              <div class="col-md-1"></div>
+      
+              <!-- Left Section (Title & Button) -->
+              <div class="col-md-2 d-flex flex-md-column flex-row justify-content-between px-3 px-md-0">
+                  <h2 class="fs-32 fm-v px-lg-5">OUR PROJECTS</h2>
+                  <button class="explore-btn btn-sm btn btn-outline-dark mx-lg-5 p-2 px-3 fs-16">Explore Work</button>
+              </div>
+      
+              <!-- Right Section (Swiper) -->
+              <div class="col-md-9">
+                  <div class="swiper init-swiper">
+                      <script type="application/json" class="swiper-config">
+                        {
+                          "loop": true,
+                          "speed": 1000,
+                          "autoplay": {
+                              "delay": 3000,
+                              "disableOnInteraction": false
+                          },
+                          "slidesPerView": 3,
+                          "spaceBetween": 16,
+                          "pagination": {
                               "el": ".swiper-pagination",
                               "type": "bullets",
                               "clickable": true
-                            },
-                            "breakpoints": {
+                          },
+                          "navigation": {
+                              "nextEl": ".swiper-button-next",
+                              "prevEl": ".swiper-button-prev"
+                          },
+                          "breakpoints": {
                               "320": {
-                                "slidesPerView": 1.2,
-                                "spaceBetween": 16
+                                  "slidesPerView": 1,
+                                  "spaceBetween": 8
                               },
                               "480": {
-                                "slidesPerView": 1.2,
-                                "spaceBetween": 16
+                                  "slidesPerView": 2,
+                                  "spaceBetween": 8
                               },
                               "640": {
-                                "slidesPerView": 1.2,
-                                "spaceBetween": 16
+                                  "slidesPerView": 3,
+                                  "spaceBetween": 8
                               },
                               "992": {
-                                "slidesPerView": 1.2,
-                                "spaceBetween": 16
+                                  "slidesPerView": 3,
+                                  "spaceBetween": 16
                               }
-                            }
                           }
-                        </script>
-                        <div class="swiper-wrapper align-items-center">
-
-                            <div class="swiper-slide">
-                                <img src="../assets/img/Mask group (1).png" class="img-fluid" alt="">
-                                <p class="mb-0 fm-v fs-20">SHYAM AMLANI</p>
-                                <p class="mb-0">Residential project</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="../assets/img/Mask group (1).png" class="img-fluid" alt="">
-                                <p class="mb-0 fm-v fs-20">SHYAM AMLANI</p>
-                                <p class="mb-0">Residential project</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="../assets/img/Mask group (1).png" class="img-fluid" alt="">
-                                <p class="mb-0 fm-v fs-20">SHYAM AMLANI</p>
-                                <p class="mb-0">Residential project</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="../assets/img/Mask group (1).png" class="img-fluid" alt="">
-                                <p class="mb-0 fm-v fs-20">SHYAM AMLANI</p>
-                                <p class="mb-0">Residential project</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="../assets/img/Mask group (1).png" class="img-fluid" alt="">
-                                <p class="mb-0 fm-v fs-20">SHYAM AMLANI</p>
-                                <p class="mb-0">Residential project</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="../assets/img/Mask group (1).png" class="img-fluid" alt="">
-                                <p class="mb-0 fm-v fs-20">SHYAM AMLANI</p>
-                                <p class="mb-0">Residential project</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="../assets/img/Mask group (1).png" class="img-fluid" alt="">
-                                <p class="mb-0 fm-v fs-20">SHYAM AMLANI</p>
-                                <p class="mb-0">Residential project</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+                      }
+                      </script>
+                      <div class="swiper-wrapper align-items-center">
+                          <div class="swiper-slide">
+                              <img src="../assets/img/Mask group (1).png" class="img-fluid" alt="">
+                              <p class="mt-3 mb-0 fm-v fs-20">SHYAM AMLANI</p>
+                              <p class="mb-0">Residential project</p>
+                          </div>
+                          <div class="swiper-slide">
+                              <img src="../assets/img/Mask group (1).png" class="img-fluid" alt="">
+                              <p class="mt-3 mb-0 fm-v fs-20">SAMANVAY WEST</p>
+                              <p class="mb-0">Residential project</p>
+                          </div>
+                          <div class="swiper-slide">
+                              <img src="../assets/img/Mask group (1).png" class="img-fluid" alt="">
+                              <p class="mt-3 mb-0 fm-v fs-20">SHYAM AMLANI</p>
+                              <p class="mb-0">Residential project</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
         </div>
     </main>
     <footer id="footer" class="footer">
