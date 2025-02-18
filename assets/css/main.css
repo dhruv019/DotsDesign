@@ -2823,3 +2823,11 @@ section,
       width: 100% !important;
   }
 }
+.center-top {
+  transform: translate(25%, 50%);
+  top: 0;
+  border: 0;
+  left: 0;
+  right: 0;
+  width: 75%;
+}
