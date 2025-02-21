@@ -1837,6 +1837,7 @@ section,
 }
 
 #mobile-nav.active {
+  padding-top: 40px;
   transform: translateX(0);
 }
 
@@ -1851,10 +1852,11 @@ section,
 }
 
 #mobile-nav a {
+  font-family: "Viaoda Libre";
   color: #000;
   text-decoration: none;
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 /* Responsive Styles */
