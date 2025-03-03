@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
     Promise.all([
         loadComponent('/components/header.html', 'header-container'),
         loadComponent('/components/footer.html', 'footer-container'),
+        loadComponent('/components/projects-section.html', 'projects-section-container'),
         windowLoaded
     ]).then(() => {
         // Remove preloader after all components are loaded

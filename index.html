@@ -56,80 +56,102 @@
             of functionality and aesthetics. Each project tells a unique story, tailored to our client’s vision. Explore
             our work and let it inspire your next dream space.</span>
         </div>
-
-        <div class="swiper init-swiper" data-aos="fade-up" data-aos-delay="100">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
+        
+        <div class="custom-slider-wrapper">
+          <div class="swiper init-swiper" data-aos="fade-up" data-aos-delay="100">
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                  "delay": 200000,
+                  "disableOnInteraction": false
+                },
+                "navigation": {
+                  "nextEl": ".swiper-button-next",
+                  "prevEl": ".swiper-button-prev"
+                },
+                "slidesPerView": 1,
+                "effect": "fade",
+                "fadeEffect": {
+                  "crossFade": true
+                }
               }
-            }
-          </script>
-          <div class="swiper-wrapper">
+            </script>
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <div class="slide-container">
+                  <!-- Background Image -->
+                  <div class="slide-bg">
+                    <img src="assets/img/home-page-explore-work/shilp-residence.png" alt="Shilp Residence Background">
+                  </div>
 
-            <div class="swiper-slide">
-              <div class="row gy-4 event-item">
-                <div class="col-lg-12">
-                  <div class="position-relative">
-                    <img class="slider-bg" src="assets/img/home-page-explore-work/shilp-residence.png" alt=""
-                      data-aos="fade-in">
-                    <div class="py-3 ps-3 bg-white d-flex position-absolute center-top">
-                      <div class="col-md-8">
-                        <img src="assets/img/home-page-explore-work/shilp-residence.png" class="img-fluid" alt="">
+                  <!-- Content Overlay -->
+                  <div class="content-overlay">
+                    <div class="content-inner">
+                      <div class="image-frame">
+                        <img src="assets/img/home-page-explore-work/shilp-residence.png" alt="Shilp Residence">
                       </div>
-                      <div class="col-md-3 ps-3">
-                        <h3 class="text-black text-nowrap">Birthday Parties</h3>
-                        <p class="text-black">
-                          Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                          reprehenderit
-                          in voluptate
-                          velit esse cillum dolore eu fugiat nulla pariatur
-                        </p>
+                      <div class="text-content">
+                        <h2>SHILP RESIDENCE</h2>
+                        <p>A modern contemporary and a cozy space.</p>
+                        <div class="navigation-buttons">
+                          <button class="nav-btn prev">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </button>
+                          <button class="nav-btn next">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
-            </div>
 
-            <div class="swiper-slide">
-              <div class="row gy-4 event-item">
-                <div class="col-lg-12">
-                  <div class="position-relative">
-                    <img class="slider-bg" src="assets/img/about-us.png" alt=""
-                      data-aos="fade-in">
-                    <div class="py-3 ps-3 bg-white d-flex position-absolute center-top">
-                      <div class="col-md-8">
-                        <img src="assets/img/about-us.png" class="img-fluid" alt="">
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <div class="slide-container">
+                  <div class="slide-bg">
+                    <img src="assets/img/about-us.png" alt="About Us Background">
+                  </div>
+
+                  <div class="content-overlay">
+                    <div class="content-inner">
+                      <div class="image-frame">
+                        <img src="assets/img/home-page-explore-work/shilp-residence.png" alt="About Us">
                       </div>
-                      <div class="col-md-3 ps-3">
-                        <h3 class="text-black text-nowrap">Birthday Parties</h3>
-                        <p class="text-black">
-                          Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                          reprehenderit
-                          in voluptate
-                          velit esse cillum dolore eu fugiat nulla pariatur
-                        </p>
+                      <div class="text-content">
+                        <h2>BIRTHDAY PARTIES</h2>
+                        <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                          in
+                          voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                        <div class="navigation-buttons">
+                          <button class="nav-btn prev">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </button>
+                          <button class="nav-btn next">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
-
-
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
           </div>
-          <div class="swiper-pagination"></div>
         </div>
 
 
@@ -267,108 +289,115 @@
         </div>
 
         <div class="container">
+          <div class="hp-portfolio-container">
+            <div class="room-selector mb-4">
+              <button class="room-btn active" data-slide="0">Living room</button>
+              <button class="room-btn" data-slide="1">Dining room</button>
+              <button class="room-btn" data-slide="2">Bedroom</button>
+              <button class="room-btn" data-slide="3">Explore more</button>
+            </div>
 
-          <div class="isotope-layout" data-default-filter=".filter-living" data-layout="masonry"
-            data-sort="original-order">
-
-            <ul
-              class="portfolio-filters isotope-filters d-flex align-items-center justify-content-center gap-4 flex-wrap">
-              <li data-filter=".filter-living" class="filter-active">Living room</li>
-              <li data-filter=".filter-dining">Dining room</li>
-              <li data-filter=".filter-bedroom">Bedroom</li>
-              <li data-filter=".filter-explore">Explore more</li>
-            </ul>
-            <div class="row gy-4 isotope-container">
-              <div class="col-md-12 portfolio-item isotope-item filter-living">
-                <div class="swiper init-swiper px-lg-5 mx-lg-5 px-0 mx-0">
-                  <script type="application/json" class="swiper-config">
-                    {
-                      "loop": true,
-                      "speed": 600,
-                      
-                      "slidesPerView": "auto",
-                      "pagination": {
+            <div class="hp-portfolio-wrapper">
+              <div class="hp-slider">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 1000,
+                    "autoplay": {
+                        "delay": 200000,
+                        "disableOnInteraction": false
+                    },
+                    "slidesPerView": 1,
+                    "centeredSlides": true,
+                    "pagination": {
                         "el": ".swiper-pagination",
                         "type": "bullets",
                         "clickable": true
-                      },
-                      "navigation": {
+                    },
+                    "navigation": {
                         "nextEl": ".swiper-button-next",
                         "prevEl": ".swiper-button-prev"
-                      },
-                      "breakpoints": {
-                        "320": {
-                          "slidesPerView": 1,
-                          "spaceBetween": 16
-                        },
-                        "480": {
-                          "slidesPerView": 1,
-                          "spaceBetween": 16
-                        },
-                        "640": {
-                          "slidesPerView": 1,
-                          "spaceBetween": 16
-                        },
-                        "992": {
-                          "slidesPerView": 1,
-                          "spaceBetween": 16
-                        }
-                      }
                     }
-                  </script>
-                  <div class="swiper-button-next"></div>
-                  <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide">
-                      <div class="row g-0 w-100">
-                        <div class="col-md-6 col-sm-12 clients-before">
-                          <img src="assets/img/clients/client1-before.png" class="img-fluid" alt="">
-                          <div>Before</div>
+                  }
+                </script>
+
+                <div class="swiper-button-next home-page-next-btn"></div>
+                <div class="swiper-button-prev home-page-prev-btn"></div>
+
+                <div class="swiper-wrapper">
+                  <!-- Living Room Slide -->
+                  <div class="swiper-slide">
+                    <div class="hp-slide-content">
+                      <div class="hp-image-comparison">
+                        <div class="hp-image-before">
+                          <img src="assets/img/home-page-before-after/before-living.png" alt="Living Room Before">
+                          <span class="hp-label">Before</span>
                         </div>
-                        <div class="col-md-6 col-ms-12 clients-after">
-                          <img src="assets/img/clients/client2-after.png" class="img-fluid" alt="">
-                          <div>After</div>
-                        </div>
-                      </div>
-                      <div class="card rounded-0">
-                        <div class="card-body">
-                          <h4 class="card-title">HARSH PATEL Residence</h4>
-                          <p class="card-text">We transformed the space into a perfect harmony of style and
-                            functionality.
-                            Every detail is thoughtfully designed to elevate your living experience.</p>
+                        <div class="hp-image-after">
+                          <img src="assets/img/home-page-before-after/after-living.png" alt="Living Room After">
+                          <span class="hp-label">After</span>
                         </div>
                       </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="row g-0 w-100">
-                        <div class="col-md-6 col-sm-12 clients-before">
-                          <img src="assets/img/clients/client1-before.png" class="img-fluid" alt="">
-                          <div>Before</div>
-                        </div>
-                        <div class="col-md-6 col-ms-12 clients-after">
-                          <img src="assets/img/clients/client2-after.png" class="img-fluid" alt="">
-                          <div>after</div>
-                        </div>
-                      </div>
-                      <div class="card rounded-0">
-                        <div class="card-body">
-                          <h4 class="card-title">HARSH PATEL Residence</h4>
-                          <p class="card-text">We transformed the space into a perfect harmony of style and
-                            functionality.
-                            Every detail is thoughtfully designed to elevate your living experience.</p>
-                        </div>
+                      <div class="hp-slide-info">
+                        <h2 class="hp-slide-title">LIVING ROOM TRANSFORMATION</h2>
+                        <p class="hp-slide-description">
+                          We transformed the space into a perfect harmony of style and functionality. 
+                          Every detail is thoughtfully designed to elevate your living experience.
+                        </p>
                       </div>
                     </div>
                   </div>
-                  <div class="swiper-button-prev"></div>
 
+                  <!-- Dining Room Slide -->
+                  <div class="swiper-slide">
+                    <div class="hp-slide-content">
+                      <div class="hp-image-comparison">
+                        <div class="hp-image-before">
+                          <img src="assets/img/home-page-before-after/before-dining.png" alt="Dining Room Before">
+                          <span class="hp-label">Before</span>
+                        </div>
+                        <div class="hp-image-after">
+                          <img src="assets/img/home-page-before-after/after-dining.png" alt="Dining Room After">
+                          <span class="hp-label">After</span>
+                        </div>
+                      </div>
+                      <div class="hp-slide-info">
+                        <h2 class="hp-slide-title">DINING ROOM TRANSFORMATION</h2>
+                        <p class="hp-slide-description">
+                          We transformed the space into a perfect harmony of style and functionality. 
+                          Every detail is thoughtfully designed to elevate your dining experience.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Bedroom Slide -->
+                  <div class="swiper-slide">
+                    <div class="hp-slide-content">
+                      <div class="hp-image-comparison">
+                        <div class="hp-image-before">
+                          <img src="assets/img/home-page-before-after/before-bedroom.png" alt="Bedroom Before">
+                          <span class="hp-label">Before</span>
+                        </div>
+                        <div class="hp-image-after">
+                          <img src="assets/img/home-page-before-after/after-bedroom.png" alt="Bedroom After">
+                          <span class="hp-label">After</span>
+                        </div>
+                      </div>
+                      <div class="hp-slide-info">
+                        <h2 class="hp-slide-title">BEDROOM TRANSFORMATION</h2>
+                        <p class="hp-slide-description">
+                          We transformed the space into a perfect harmony of style and functionality. 
+                          Every detail is thoughtfully designed to elevate your sleeping experience.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
           </div>
-
         </div>
-
       </section>
 
 

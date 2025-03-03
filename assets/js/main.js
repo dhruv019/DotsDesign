@@ -134,23 +134,85 @@
   new PureCounter();
 
   /**
-   * Init swiper sliders
+   * Initialize Swiper sliders
    */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
+    document.querySelectorAll('.init-swiper').forEach(function(slider) {
+      const configElement = slider.querySelector('.swiper-config');
+      if (!configElement) return;
 
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
-        new Swiper(swiperElement, config);
+      try {
+        const config = JSON.parse(configElement.textContent);
+        const swiper = new Swiper(slider, config);
+
+        // Add custom navigation functionality
+        const prevButtons = slider.querySelectorAll('.nav-btn.prev');
+        const nextButtons = slider.querySelectorAll('.nav-btn.next');
+
+        prevButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            swiper.slidePrev();
+          });
+        });
+
+        nextButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            swiper.slideNext();
+          });
+        });
+      } catch (error) {
+        console.error('Error initializing swiper:', error);
       }
     });
   }
 
-  window.addEventListener("load", initSwiper);
+  window.addEventListener('load', initSwiper);
+
+  /**
+   * Initialize portfolio Swiper
+   */
+  function initPortfolioSwiper() {
+    const portfolioSlider = document.querySelector('.hp-portfolio-container .hp-slider');
+    if (!portfolioSlider) return;
+
+    const configElement = portfolioSlider.querySelector('.swiper-config');
+    if (!configElement) return;
+
+    try {
+      const config = JSON.parse(configElement.textContent);
+      const swiper = new Swiper(portfolioSlider, config);
+
+      // Handle room selection buttons
+      const roomButtons = document.querySelectorAll('.room-btn');
+      roomButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const slideIndex = parseInt(button.getAttribute('data-slide'));
+          swiper.slideTo(slideIndex);
+          
+          // Update active state
+          roomButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+        });
+      });
+
+      // Update room button active state on slide change
+      swiper.on('slideChange', () => {
+        const activeIndex = swiper.realIndex;
+        roomButtons.forEach((button) => {
+          const slideIndex = parseInt(button.getAttribute('data-slide'));
+          if (slideIndex === activeIndex) {
+            button.classList.add('active');
+          } else {
+            button.classList.remove('active');
+          }
+        });
+      });
+    } catch (error) {
+      console.error('Error initializing portfolio swiper:', error);
+    }
+  }
+
+  window.addEventListener('load', initPortfolioSwiper);
 
   /**
    * Init isotope layout and filters
