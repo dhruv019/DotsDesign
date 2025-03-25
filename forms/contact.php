@@ -13,7 +13,7 @@ require '../PHPMailer/src/Exception.php';
 // if (isset($_POST['submit'])) {
 
 // Replace with your real receiving email address
-$receiving_email_address = 'dertdhruv@gmail.com';
+$receiving_email_address = 'dotsdesignail@gmail.com';
 
 try {
   // Check if all required fields are set
