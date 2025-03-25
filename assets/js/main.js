@@ -143,45 +143,30 @@
 
       try {
         const config = JSON.parse(configElement.textContent);
-        
-        // Add custom classes for navigation
-        // if (!slider.querySelector('.swiper-button-next')) {
-        //   const nextBtn = document.createElement('div');
-        //   nextBtn.className = 'swiper-button-next home-page-next-btn';
-        //   slider.appendChild(nextBtn);
-        // }
-        
-        // if (!slider.querySelector('.swiper-button-prev')) {
-        //   const prevBtn = document.createElement('div');
-        //   prevBtn.className = 'swiper-button-prev home-page-prev-btn';
-        //   slider.appendChild(prevBtn);
-        // }
+        const swiper = new Swiper(slider, config);
 
-        // Initialize Swiper
-        new Swiper(slider, config);
+        // Add custom navigation functionality
+        const prevButtons = slider.querySelectorAll('.nav-btn.prev');
+        const nextButtons = slider.querySelectorAll('.nav-btn.next');
+
+        prevButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            swiper.slidePrev();
+          });
+        });
+
+        nextButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            swiper.slideNext();
+          });
+        });
       } catch (error) {
         console.error('Error initializing swiper:', error);
       }
     });
   }
 
-  // Initialize Swiper on page load
   window.addEventListener('load', initSwiper);
-
-  // Re-initialize Swiper when dynamic content is loaded
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      if (mutation.addedNodes.length) {
-        mutation.addedNodes.forEach((node) => {
-          if (node.nodeType === 1 && (node.matches('.init-swiper') || node.querySelector('.init-swiper'))) {
-            setTimeout(initSwiper, 100); // Small delay to ensure content is fully loaded
-          }
-        });
-      }
-    });
-  });
-
-  observer.observe(document.body, { childList: true, subtree: true });
 
   /**
    * Initialize portfolio Swiper
