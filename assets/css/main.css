@@ -3093,6 +3093,32 @@ section,
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* Mobile styles for navigation buttons */
+@media (max-width: 768px) {
+  /* .nav-btn {
+    padding: 12px;
+    transform: scale(1.5);
+  } */
+  
+  .nav-btn svg {
+    width: 32px; /* Larger SVG on mobile */
+    height: 32px;
+  }
+}
+
+/* Even larger for smaller phones */
+@media (max-width: 375px) {
+  /* .nav-btn {
+    padding: 14px;
+    transform: scale(1.75);
+  } */
+  
+  .nav-btn svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
 /* Hide default Swiper navigation */
 .swiper-button-next, .swiper-button-prev {
   width: 48px;
