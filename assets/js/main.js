@@ -296,7 +296,64 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * Services Form Validation and Submission
+   */
+  (() => {
+    const servicesForm = document.getElementById('servicesForm');
+    if (!servicesForm) return;
+
+    servicesForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      if (!this.checkValidity()) {
+        event.stopPropagation();
+        this.classList.add('was-validated');
+        return;
+      }
+
+      const submitButton = this.querySelector('#submit-button');
+      const buttonText = submitButton.querySelector('.button-text');
+      const spinner = submitButton.querySelector('.spinner-border');
+
+      // Disable form and show loading
+      submitButton.disabled = true;
+      buttonText.style.display = 'none';
+      spinner.classList.remove('d-none');
+
+      const formData = new FormData(this);
+      fetch(this.action, {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => response.text())
+      .then(data => {
+        // Re-enable form
+        submitButton.disabled = false;
+        buttonText.style.display = 'inline';
+        spinner.classList.add('d-none');
+        
+        if (data.trim() === 'OK') {
+          alert('Message sent successfully!');
+          this.reset();
+          this.classList.remove('was-validated');
+        } else {
+          alert('An error occurred. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+        
+        // Re-enable form
+        submitButton.disabled = false;
+        buttonText.style.display = 'inline';
+        spinner.classList.add('d-none');
+      });
+    });
+  })();
 })();
+
 // document.addEventListener('DOMContentLoaded', () => {
 //   fetch('../helpers/header.html')
 //     .then(response => response.text())
