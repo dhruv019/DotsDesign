@@ -23,9 +23,6 @@
     <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="../assets/css/main.css" rel="stylesheet">
-    <!-- Toastify CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
 </head>
 
 <body class="index-page">
@@ -87,7 +84,7 @@
                     </div>
 
                     <div class="project-cost__form-wrapper">
-                        <form id="servicesForm" action="../forms/contact.php" method="post" class="php-email-form project-cost__form needs-validation" novalidate>
+                        <form id="servicesForm" method="post" class="project-cost__form needs-validation" novalidate>
                             <div class="project-cost__form-row">
                                 
                                 <div class="project-cost__form-group">
@@ -155,15 +152,16 @@
 
     <!-- Preloader -->
     <div id="preloader">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div class="preloader-content">
+          <img src="/assets/img/logo.png" alt="Dots Logo" class="preloader-logo">
+          <div class="loading-bar">
+            <div class="loading-progress"></div>
+          </div>
+        </div>
     </div>
 
     <!-- Vendor JS Files -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/vendor/php-email-form/validate.js"></script>
     <script src="../assets/vendor/aos/aos.js"></script>
     <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
@@ -176,9 +174,9 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- Toastify JS -->
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="../assets/js/components.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../assets/js/main.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -244,31 +242,34 @@
                         buttonText.removeClass('d-none');
                         spinner.addClass('d-none');
 
-                        if (response.success) {
-                            // Reset form
-                            form[0].reset();
-                            resetValidation();
+                        try {
+                            // Handle string response
+                            if (typeof response === 'string') {
+                                response = JSON.parse(response);
+                            }
 
-                            // Show success message
+                            if (response.status === 'success') {
+                                // Reset form
+                                form[0].reset();
+                                resetValidation();
+
+                                // Show success message
+                                Swal.fire({
+                                    title: 'Form Submitted!',
+                                    text: response.message,
+                                    icon: 'success',
+                                    confirmButtonText: 'OK'
+                                });
+                            } else {
+                                throw new Error(response.message || 'Something went wrong!');
+                            }
+                        } catch (err) {
                             Swal.fire({
-                                title: 'Success!',
-                                text: 'Your message has been sent successfully!',
-                                icon: 'success',
-                                confirmButtonColor: '#3085d6'
+                                title: 'Submission Failed',
+                                text: err.message || 'Something went wrong!',
+                                icon: 'error',
+                                confirmButtonText: 'Try Again'
                             });
-
-                            // Show toast notification
-                            Toastify({
-                                text: "Message sent successfully!",
-                                duration: 3000,
-                                gravity: "top",
-                                position: "right",
-                                style: {
-                                    background: "#28a745"
-                                }
-                            }).showToast();
-                        } else {
-                            throw new Error(response.message || 'Something went wrong!');
                         }
                     },
                     error: function (xhr, status, error) {
@@ -282,19 +283,8 @@
                             title: 'Error!',
                             text: 'There was an error sending your message. Please try again.',
                             icon: 'error',
-                            confirmButtonColor: '#dc3545'
+                            confirmButtonText: 'Try Again'
                         });
-
-                        // Show toast notification
-                        Toastify({
-                            text: "Error sending message!",
-                            duration: 3000,
-                            gravity: "top",
-                            position: "right",
-                            style: {
-                                background: "#dc3545"
-                            }
-                        }).showToast();
                     }
                 });
             });
@@ -303,12 +293,12 @@
             form.find('.form-control, .form-select').on('input', function () {
                 validateInput($(this));
             });
+
+            // Validation on blur
+            form.find('.form-control, .form-select').on('focusout', function () {
+                validateInput($(this));
+            });
         });
     </script>
-
-    <!-- Main JS File -->
-    <script src="../assets/js/main.js"></script>
-
 </body>
-
 </html>
